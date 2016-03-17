@@ -1,1 +1,1 @@
-export { default as nbaShotZones } from './src/nba-shot-zones.js'
+export { getZones, getZoneFromShot } from './src/nba-shot-zones.js'

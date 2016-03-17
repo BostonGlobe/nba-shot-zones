@@ -84,7 +84,7 @@ function dist(x, y) {
 	return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)).toFixed(2)
 }
 
-function getZoneNames() {
+function getZones() {
 	return zones.map(zone => zone.name)
 }
 
@@ -94,6 +94,4 @@ function getZoneFromShot({ x, y }) {
 	return zone ? zone.name : null
 }
 
-export default function nbaShotZones() {
-	return { getZoneNames, getZoneFromShot }
-}
+export { getZones, getZoneFromShot }
