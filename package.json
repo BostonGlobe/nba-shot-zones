@@ -1,0 +1,19 @@
+{
+  "name": "nba-shot-zones",
+  "version": "1.0.0",
+  "description": "Compute shot zones from x,y coordindates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+     "type": "git",
+     "url": "git+https://github.com/BostonGlobe/nba-shot-zones.git"
+   },
+   "author": "Russell Goldenberg",
+   "license": "MIT",
+   "bugs": {
+     "url": "https://github.com/BostonGlobe/nba-shot-zones/issues"
+   },
+   "homepage": "https://github.com/BostonGlobe/nba-shot-zones#readme"
+}
