@@ -17,17 +17,17 @@ const zones = [
 		y <= (freeThrowLine / 2) &&
 		Math.abs(x) <= (paint / 2),
 	},
-	{ name: 'high post', contains: ({ x, y, d }) =>
+	{ name: 'high post', contains: ({ x, y }) =>
 		y > (freeThrowLine / 2) &&
 		y < freeThrowLine &&
 		Math.abs(x) <= (paint / 2),
 	},
-	{ name: 'midrange (lower right)', contains: ({ x, y, d }) =>
+	{ name: 'midrange (lower right)', contains: ({ x, y }) =>
 		x >= -cornerThreeX &&
 		x < -(paint / 2) &&
 		y < cornerThreeY,
 	},
-	{ name: 'midrange (lower left)', contains: ({ x, y, d }) =>
+	{ name: 'midrange (lower left)', contains: ({ x, y }) =>
 		x > (paint / 2) &&
 		x <= cornerThreeX &&
 		y < cornerThreeY,
@@ -53,7 +53,7 @@ const zones = [
 		x < -cornerThreeX &&
 		y < cornerThreeY,
 	},
-	{ name: 'three (left corner)', contains: ({ x, y}) =>
+	{ name: 'three (left corner)', contains: ({ x, y }) =>
 		x > cornerThreeX &&
 		y < cornerThreeY,
 	},
@@ -75,12 +75,12 @@ const zones = [
 		x > paint &&
 		y > cornerThreeY,
 	},
-	{ name: 'three (deep)', contains: () => ({ d }) =>
-		d >= deepThree
+	{ name: 'three (deep)', contains: ({ d }) =>
+		d >= deepThree,
 	},
 ]
 
-function dist(x, y, d) {
+function dist(x, y) {
 	return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)).toFixed(2)
 }
 
@@ -88,13 +88,12 @@ function getZoneNames() {
 	return zones.map(zone => zone.name)
 }
 
-function getZoneFromShot({x, y}) {
+function getZoneFromShot({ x, y }) {
 	const d = dist(x, y)
-	const zone = zones.filter(z => z.contains({x, y, d}))[0]
+	const zone = zones.filter(z => z.contains({ x, y, d })).shift()
 	return zone ? zone.name : null
 }
 
-export default function() {
+export default function nbaShotZones() {
 	return { getZoneNames, getZoneFromShot }
 }
-
