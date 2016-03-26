@@ -1,6 +1,6 @@
 {
   "name": "nba-shot-zones",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Compute shot zones from x,y coordindates",
   "main": "build/index.js",
   "jsnext:main": "build/index.es6.js",
