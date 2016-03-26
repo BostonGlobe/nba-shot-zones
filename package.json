@@ -33,5 +33,9 @@
   "bugs": {
     "url": "https://github.com/BostonGlobe/nba-shot-zones/issues"
   },
-  "homepage": "https://github.com/BostonGlobe/nba-shot-zones#readme"
+  "homepage": "https://github.com/BostonGlobe/nba-shot-zones#readme",
+  "dependencies": {
+    "lodash.filter": "^4.2.1",
+    "lodash.map": "^4.2.1"
+  }
 }

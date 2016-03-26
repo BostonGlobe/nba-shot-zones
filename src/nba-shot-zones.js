@@ -1,4 +1,6 @@
 // assumes origin [0,0] is hoop center
+import filter from 'lodash.filter'
+import map from 'lodash.map'
 
 const restricted = 4
 const freeThrowLine = 13.75
@@ -85,12 +87,13 @@ function dist(x, y) {
 }
 
 function getZones() {
-	return zones.map(zone => zone.name)
+	return map(zones, 'name')
 }
 
 function getZoneFromShot({ x, y }) {
 	const d = dist(x, y)
-	const zone = zones.filter(z => z.contains({ x, y, d })).shift()
+	const zone = filter(zones, z => z.contains({ x, y, d }))
+		.shift()
 	return zone ? zone.name : null
 }
 
